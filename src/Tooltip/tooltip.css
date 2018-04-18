@@ -45,7 +45,7 @@
   width: 2rem;
 }
 
-.tooltip--arrow-left .tooltip__arrow {
+.tooltip__arrow.tooltip--arrow-left  {
   left: 0.5rem;
 }
 
