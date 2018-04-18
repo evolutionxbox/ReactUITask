@@ -43,12 +43,18 @@ export default class Tooltip extends Component {
 }
 
 Tooltip.propTypes = {
+  buttonText: PropTypes.string.isRequired,
+  arrow: PropTypes.string,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    url: PropTypes.PropTypes.string.isRequired,
+    icon: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      colour: PropTypes.string.isRequired,
+      width: PropTypes.number,
+      height: PropTypes.number
+    })
+  })).isRequired,
   width: PropTypes.number,
-  expanded: PropTypes.bool,
-  children: PropTypes.node.isRequired
+  expanded: PropTypes.bool
 }
-
-// Components used for options
-export const TooltipButton = () => {}
-export const TooltipArrow = () => {}
-export const TooltipLink = Link
