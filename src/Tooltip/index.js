@@ -4,11 +4,11 @@ import View from './View'
 import OutsideClick from './OutsideClick'
 
 export default class Tooltip extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
-      expanded: false
+      expanded: !!this.props.expanded
     }
 
     this.onOutsideClick = this.onOutsideClick.bind(this)
