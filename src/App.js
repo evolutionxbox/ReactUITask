@@ -1,5 +1,6 @@
 import React from 'react'
 import Tooltip, { TooltipButton, TooltipArrow, TooltipLink } from './Tooltip'
+import Icon from './Icon'
 
 const CustomButton = ({onClick, children}) => <button onClick={onClick}>{children}</button>
 
@@ -9,7 +10,10 @@ const App = () => (
     <Tooltip>
       <TooltipButton>Button CTA</TooltipButton>
       <TooltipArrow />
-      <TooltipLink href='https://google.com'>Google</TooltipLink>
+      <TooltipLink href='https://google.com'>
+        <Icon name="account" colour="white" height={20} width={20} />
+        Google
+      </TooltipLink>
       <TooltipLink href='https://google.com'>Google</TooltipLink>
       <TooltipLink href='https://google.com'>Google</TooltipLink>
     </Tooltip>
