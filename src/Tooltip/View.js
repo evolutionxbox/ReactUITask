@@ -34,10 +34,21 @@ const View = ({
 }
 
 View.propTypes = {
+  buttonText: PropTypes.string.isRequired,
+  arrow: PropTypes.string,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    url: PropTypes.PropTypes.string.isRequired,
+    icon: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      colour: PropTypes.string.isRequired,
+      width: PropTypes.number,
+      height: PropTypes.number
+    })
+  })).isRequired,
   width: PropTypes.number,
   expanded: PropTypes.bool,
-  onClick: PropTypes.func.isRequired,
-  children: PropTypes.node.isRequired
+  onClick: PropTypes.func.isRequired
 }
 
 export default View
