@@ -1,41 +1,31 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Button from './Button'
-import Arrow from './Arrow'
+import Item from './Item'
 import './tooltip.css'
 
 const View = ({
+  buttonText,
+  arrow,
+  items,
   width,
   expanded,
-  onClick,
-  ...props
+  onClick
 }) => {
-  // children rendering
-  const children = React.Children.toArray(props.children)
-  const buttonOpts = children.filter(child => child.type.name === 'TooltipButton').map(({props}) => ({ ...props }))[0]
-  const arrowOpts = children.filter(child => child.type.name === 'TooltipArrow').map(({props}) => ({ ...props }))[0]
-
-  // throw errors
-  if (!buttonOpts) {
-    throw new Error('Warning: TooltipButton cannot be undefined')
-  }
-
   // style and classes
   const expandedClass = expanded ? 'tooltip--expanded' : ''
+  const arrowClass = arrow === 'left' ? 'tooltip--arrow-left' : ''
   const style = {
     width: parseInt(width, 10) || ''
   }
 
   return (
     <div className={['tooltip', expandedClass].join(' ')} style={style}>
-      {Button({ ...buttonOpts, onClick})}
-      <div className="tooltip__frame">
-        {Arrow(arrowOpts)}
-        <ul className="tooltip__list">
+      <button className='tooltip__button' onClick={onClick}>{buttonText}</button>
+      <div className='tooltip__frame'>
+        <span className={['tooltip__arrow', arrowClass].join(' ')}></span>
+        <ul className='tooltip__list'>
           {
-            children
-              .filter(child => child.type.name === 'Link')
-              .map(child => <li key={child.key} className="tooltip__item">{child}</li>)
+            items && items.map((item, i) => <Item key={`item${i}`} {...item} />)
           }
         </ul>
       </div>
