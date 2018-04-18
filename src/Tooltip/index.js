@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import View from './View'
 import OutsideClick from './OutsideClick'
-import Link from './Link'
 
 export default class Tooltip extends Component {
   constructor() {
