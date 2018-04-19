@@ -80,7 +80,7 @@ const itemsWithIcons = [
 storiesOf('Tooltip', module)
   .addDecorator(withKnobs)
   .addDecorator(checkA11y)
-  .add('Normal',
+  .add('default',
     withInfo(`
       A simple Tooltip component which opens a list of links when the button is
       clicked.
@@ -94,51 +94,43 @@ storiesOf('Tooltip', module)
       <Tooltip buttonText={text('ButtonText', 'Button CTA')} items={object('Items', items)} />
     )
   )
-  .add('Normal with icons',
+  .add('expanded',
     withInfo(`
-      Same as "Normal" except supplied items have icons.
+      The panel can be expanded manually via a prop.
     `)
     (() =>
-      <Tooltip buttonText={text('ButtonText', 'Button CTA')} items={object('Items', itemsWithIcons)} />
+      <Tooltip buttonText={text('ButtonText', 'Button CTA')} expanded={boolean('Expanded', true)} items={object('Items', items)} />
     )
   )
-  .add('Arrow positioned left',
+  .add('custom button text',
     withInfo(`
-      Same as "Normal" except the Tooltip arrow is now left aligned.
-    `)
-    (() =>
-      <Tooltip buttonText={text('ButtonText', 'Button CTA')} arrowLeft={boolean('ArrowLeft', true)} items={object('Items', items)} />
-    )
-  )
-  .add('200px width',
-    withInfo(`
-      Same as "Normal" except the Tooltip is now 200px wide.
-    `)
-    (() =>
-      <Tooltip width={number('Width', 200)} buttonText={text('ButtonText', 'Button CTA')} items={object('Items', items)} />
-    )
-  )
-  .add('500px width',
-    withInfo(`
-      Same as "Normal" except the Tooltip is now 500px wide.
-    `)
-    (() =>
-      <Tooltip width={number('Width', 500)} buttonText={text('ButtonText', 'Button CTA')} items={object('Items', items)} />
-    )
-  )
-  .add('Custom button text',
-    withInfo(`
-      Same as "Normal" except the Tooltip button has custom text.
+      The button text can be customised.
     `)
     (() =>
       <Tooltip buttonText={text('ButtonText', 'Custom Button Text')} items={object('Items', items)} />
     )
   )
-  .add('Initially expanded',
+  .add('items with icons',
     withInfo(`
-      Same as "Normal" except the Tooltip links are expanded initially.
+      The items can have icons.
     `)
     (() =>
-      <Tooltip buttonText={text('ButtonText', 'Button CTA')} expanded={boolean('Expanded', true)} items={object('Items', items)} />
+      <Tooltip buttonText={text('ButtonText', 'Button CTA')} items={object('Items', itemsWithIcons)} />
+    )
+  )
+  .add('arrow positioned left',
+    withInfo(`
+      The panel arrow can be positioned on the left.
+    `)
+    (() =>
+      <Tooltip buttonText={text('ButtonText', 'Button CTA')} arrowLeft={boolean('ArrowLeft', true)} items={object('Items', items)} />
+    )
+  )
+  .add('thin',
+    withInfo(`
+      By default it fills it's container, you can restrict the width, in this case it's 200px.
+    `)
+    (() =>
+      <Tooltip width={number('Width', 200)} buttonText={text('ButtonText', 'Button CTA')} items={object('Items', items)} />
     )
   )
