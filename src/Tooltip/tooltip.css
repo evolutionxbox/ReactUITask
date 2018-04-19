@@ -75,6 +75,7 @@
 }
 
 .tooltip__link {
+  color: inherit;
   display: block;
   font-size: 0.875rem;
   line-height: 1.25rem;
