@@ -70,11 +70,21 @@ export default class Tooltip extends Component {
 }
 
 Tooltip.propTypes = {
+  /**
+   * Text to display in the button
+   */
   buttonText: PropTypes.string.isRequired,
-  arrow: PropTypes.string,
+  /**
+   * Left align the tooltip arrow.
+   */
+  arrowLeft: PropTypes.bool,
+  /**
+   * Items to become links in the tooltip panel
+   */
   items: PropTypes.arrayOf(PropTypes.shape({
     text: PropTypes.string.isRequired,
-    url: PropTypes.PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    newWindow: PropTypes.bool,
     icon: PropTypes.shape({
       name: PropTypes.string.isRequired,
       colour: PropTypes.string.isRequired,
@@ -82,6 +92,12 @@ Tooltip.propTypes = {
       height: PropTypes.number
     })
   })).isRequired,
+  /**
+   * Restrict the width of the button and tooltip panel
+   */
   width: PropTypes.number,
+  /**
+   * Expand the tooltip panel (this does not affect clicking)
+   */
   expanded: PropTypes.bool
 }
