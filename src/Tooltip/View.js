@@ -12,7 +12,7 @@ const View = ({
 }) => {
   // style and classes
   const expandedClass = expanded ? 'tooltip--expanded' : ''
-  const arrowClass = arrow === 'left' ? 'tooltip--arrow-left' : ''
+  const arrowClass = arrowLeft ? 'tooltip--arrow-left' : ''
   const style = {
     width: parseInt(width, 10) || ''
   }
