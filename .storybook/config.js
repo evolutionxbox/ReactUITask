@@ -9,12 +9,12 @@ setOptions({
    * name to display in the top left corner
    * @type {String}
    */
-  name: 'Yoox - Net-a-porter Group',
+  name: 'Jon Cousins Ltd',
   /**
    * URL for name in top left corner to link to
    * @type {String}
    */
-  url: 'http://www.ynap.com/',
+  url: 'http://www.joncousins.co.uk/',
   /**
    * show addon panel as a vertical panel on the right
    * @type {Boolean}
