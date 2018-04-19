@@ -81,10 +81,9 @@ const App = () => (
     <Tooltip width={500} buttonText='Button CTA' items={items} />
     <p>Custom button text</p>
     <Tooltip buttonText='Custom Button Text' items={items} />
-    <p>Always expanded</p>
+    <p>Inititally expanded</p>
     <Tooltip buttonText='Button CTA' expanded={true} items={items} />
   </div>
 )
 
 export default App
-
