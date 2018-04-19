@@ -38,4 +38,10 @@ Item.propTypes = {
   }),
 }
 
+Item.defaultProps = {
+  text: '',
+  url: '#',
+  newWindow: false
+}
+
 export default Item
