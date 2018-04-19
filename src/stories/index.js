@@ -4,6 +4,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import { withKnobs, text, boolean, number, object, array } from '@storybook/addon-knobs/react'
+import { checkA11y } from '@storybook/addon-a11y'
 
 // Component related
 import Tooltip from '../Tooltip'
@@ -76,10 +77,9 @@ const itemsWithIcons = [
   }
 ]
 
-const stories = storiesOf('Tooltip', module)
-stories.addDecorator(withKnobs)
-
-stories
+storiesOf('Tooltip', module)
+  .addDecorator(withKnobs)
+  .addDecorator(checkA11y)
   .add('Normal',
     withInfo(`
       A simple Tooltip component which opens a list of links when the button is
