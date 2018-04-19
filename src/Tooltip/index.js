@@ -31,11 +31,6 @@ export default class Tooltip extends Component {
   constructor(props) {
     super(props)
 
-    // Set default state to be whatever `props.expanded` is
-    this.state = {
-      expanded: !!this.props.expanded
-    }
-
     this.onOutsideClick = this.onOutsideClick.bind(this)
     this.onClick = this.onClick.bind(this)
   }
@@ -53,8 +48,12 @@ export default class Tooltip extends Component {
    * On click invert the expanded state
    */
   onClick = () => {
-    this.setState({
-      expanded: !this.state.expanded
+    this.setState((state, props) => {
+      const expanded = state ? state.expanded : props.expanded
+
+      return {
+        expanded: !expanded
+      }
     })
   }
 
@@ -64,7 +63,7 @@ export default class Tooltip extends Component {
   render() {
     return (
       <OutsideClick onClick={this.onOutsideClick}>
-        <View {...this.props} onClick={this.onClick} onOutsideClick={this.onOutsideClick} {...this.state}>{this.props.children}</View>
+        <View {...this.props} {...this.state} onClick={this.onClick} onOutsideClick={this.onOutsideClick}>{this.props.children}</View>
       </OutsideClick>
     )
   }
