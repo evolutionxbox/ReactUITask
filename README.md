@@ -14,7 +14,8 @@ or
 
 ```bash
 cd ReactUITask
-yarn`
+yarn
+```
 
 ### Running
 
