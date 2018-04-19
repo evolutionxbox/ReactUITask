@@ -3,10 +3,32 @@ import PropTypes from 'prop-types'
 import View from './View'
 import OutsideClick from './OutsideClick'
 
+/**
+ * Tooltip component.
+ *
+ * Renders a button, when clicked, opens a list of
+ * user definable links with optional icons.
+ *
+ * ```jsx
+ * const item = [
+ *   {
+ *     text: 'Item Text',
+ *     url: '#',
+ *     icon: {
+ *       name: 'icon-name',
+ *       colour: 'icon-color'
+ *     }
+ *   }
+ * ]
+ *
+ * <Tooltip buttonText='Button Text' items={item} arrow='left' expanded={true} />
+ * ```
+ */
 export default class Tooltip extends Component {
   constructor(props) {
     super(props)
 
+    // Set default state to be whatever `props.expanded` is
     this.state = {
       expanded: !!this.props.expanded
     }
@@ -25,7 +47,7 @@ export default class Tooltip extends Component {
   }
 
   /**
-   * Invert the active state
+   * On click invert the expanded state
    */
   onClick = () => {
     this.setState({
@@ -33,6 +55,9 @@ export default class Tooltip extends Component {
     })
   }
 
+  /**
+   * Render the Tooltop component view wrapping it in a OutsideClick component
+   */
   render() {
     return (
       <OutsideClick onClick={this.onOutsideClick}>
