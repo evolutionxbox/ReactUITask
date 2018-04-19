@@ -1,5 +1,6 @@
 import React from 'react'
 import Item from './Item'
+import Button from '../Button'
 import './tooltip.css'
 
 const View = ({
@@ -19,7 +20,7 @@ const View = ({
 
   return (
     <div className={['tooltip', expandedClass].join(' ')} style={style}>
-      <button className='tooltip__button' onClick={onClick}>{buttonText}</button>
+      <Button className='tooltip__button' onClick={onClick}>{buttonText}</Button>
       <div className='tooltip__frame'>
         <span className={['tooltip__arrow', arrowClass].join(' ')}></span>
         <ul className='tooltip__list'>
