@@ -1,11 +1,11 @@
 {
   "name": "ui-task",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "private": true,
   "dependencies": {
     "prop-types": "^15.6.1",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1"
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^3.4.2",
@@ -18,6 +18,7 @@
     "react-scripts": "1.1.4"
   },
   "scripts": {
-    "start": "start-storybook -p 9009 -s public"
+    "start": "start-storybook -p 9009 -s public",
+    "test": "react-scripts test --env=jsdom"
   }
 }
