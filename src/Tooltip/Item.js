@@ -11,11 +11,14 @@ const RenderIcon = icon => {
 const Item = ({
   text,
   url,
+  newWindow,
   icon
 }) => {
+  const target = newWindow ? '_blank' : ''
+
   return (
     <li className='tooltip__item'>
-      <a href={url} className='tooltip__link'>
+      <a href={url} className='tooltip__link' target={target}>
         {RenderIcon(icon)}
         {text}
       </a>
@@ -26,6 +29,7 @@ const Item = ({
 Item.propTypes = {
   text: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
+  newWindow: PropTypes.bool,
   icon: PropTypes.shape({
     name: PropTypes.string.isRequired,
     colour: PropTypes.string.isRequired,
