@@ -101,3 +101,12 @@ Tooltip.propTypes = {
    */
   expanded: PropTypes.bool
 }
+
+
+Tooltip.defaultProps = {
+  buttonText: '',
+  arrowLeft: false,
+  items: [],
+  width: 0,
+  expanded: false
+}
