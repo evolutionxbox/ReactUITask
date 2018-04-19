@@ -14,9 +14,12 @@ import OutsideClick from './OutsideClick'
  *   {
  *     text: 'Item Text',
  *     url: '#',
+ *     newWindow: true,
  *     icon: {
  *       name: 'icon-name',
- *       colour: 'icon-color'
+ *       colour: 'icon-color',
+ *       width: 64,
+ *       height: 64
  *     }
  *   }
  * ]
